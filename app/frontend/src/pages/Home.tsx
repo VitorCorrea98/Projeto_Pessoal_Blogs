@@ -1,25 +1,22 @@
 import { useEffect } from 'react';
-import Header from '../components/Header';
+import { useDispatch } from 'react-redux';
+import { fetchPosts } from '../features/posts/fetchPosts';
+import Posts from '../components/Posts/Posts';
+import { fetchUsers } from '../features/users/fetchUsers';
 
 function Home() {
-  const fetchPosts = async () => {
-    try {
-      const url = import.meta.env.VITE_BACKEND_URL;
-      const response = await fetch(`${url}/posts`);
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchPosts();
+    dispatch(fetchPosts() as any);
+    dispatch(fetchUsers() as any);
+    // dispatch(fetchLikes({ postId: 1, userId: 2 }) as any);
   }, []);
+
   return (
-    <>
-      <Header />
-      <p>FEFEFE</p>
-    </>
+    <main className="w-full">
+      <Posts />
+    </main>
   );
 }
 

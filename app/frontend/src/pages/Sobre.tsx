@@ -1,11 +1,6 @@
-import Header from '../components/Header';
-
 function Sobre() {
   return (
-    <>
-      <Header />
-      <p>SOBEREBOASGBOE</p>
-    </>
+    <p>SOBEREBOASGBOE</p>
   );
 }
 

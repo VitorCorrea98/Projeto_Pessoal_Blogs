@@ -18,7 +18,11 @@ class User {
   }
 
   public async findAllLLL() {
-    const users = await this.prisma.user.findMany({ include: { posts: true, profile: true } });
+    const users = await this.prisma.user.findMany(
+      { 
+      include: { posts: true, profile: true, likes: true, comments: true }, 
+      },
+);
     return users;
   }
 }

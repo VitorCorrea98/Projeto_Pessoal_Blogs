@@ -16,6 +16,11 @@ async function main() {
           published: true,
         },
       },
+      profile: {
+        create: {
+          bio: 'ALO ALO ALO',
+        },
+      },
     },
   });
   const bob = await prisma.user.upsert({
@@ -37,6 +42,16 @@ async function main() {
             published: true,
           },
         ],
+      },
+      profile: {
+        create: {
+          bio: 'Eu estou testando o seed do primsa',
+        },
+      },
+      likes: {
+        create: {
+          postId: 3,
+        },
       },
     },
   });

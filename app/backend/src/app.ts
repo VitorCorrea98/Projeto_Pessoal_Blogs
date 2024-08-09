@@ -3,6 +3,7 @@ import userRouter from './Routes/User.Route';
 import postRouter from './Routes/Post.Route';
 import commentRouter from './Routes/Comment.Route';
 import profileRouter from './Routes/Profile.Route';
+import likeRouter from './Routes/Like.Route';
 
 class App {
   public app: express.Express;
@@ -30,6 +31,7 @@ class App {
     this.app.use('/posts', postRouter);
     this.app.use('/comments', commentRouter);
     this.app.use('/profiles', profileRouter);
+    this.app.use('/likes', likeRouter);
   }
 
   public start(PORT: string | number): void {

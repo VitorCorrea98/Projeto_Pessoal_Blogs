@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import BlogVitor from '../assets/Blog_Do_Vitor.png';
+import BlogVitor from '../../assets/Blog_Do_Vitor.png';
 
 function Header() {
   return (

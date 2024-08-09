@@ -21,7 +21,7 @@ class Post {
   public async findAll() {
     const posts = await this.prisma.post.findMany(
       { 
-        include: { author: true, comments: true },
+        include: { author: true, comments: true, likes: true },
         omit: {
           authorId: true,
         },
